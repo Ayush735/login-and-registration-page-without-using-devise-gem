@@ -1,0 +1,20 @@
+.container
+  .row
+    .col-md-12
+      .col-md-4.form-border
+        %h1.text-center 
+          Sign Up
+        = form_for @user, url: {action: 'create'} do |f|
+          .form-group
+            = f.label :name    
+            = f.text_field :name , class: 'form-control', placeholder: 'Name'
+          .form-group
+            = f.label :email
+            = f.email_field :email, class: 'form-control', placeholder: 'Email' 
+          .form-group
+            = f.label :password
+            = f.password_field :password, class: 'form-control', placeholder: 'Password'
+          .form-group
+            = f.label :password_confirmation
+            = f.password_field :password_confirmation, class: 'form-control', placeholder: 'Password Confirmation'
+          = f.submit 'Sign up', class: 'btn btn-primary'

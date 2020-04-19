@@ -1,0 +1,22 @@
+%nav.navbar.navbar-inverse
+  .container-fluid
+    .navbar-header
+      %a.navbar-brand{:href => "#"} QualtechEdge
+    %ul.nav.navbar-nav
+      %li.active
+        %a{:href => "#"} Home
+      %li
+        %a{:href => "#"} About Us
+      %li
+        %a{:href => "#"} Contact Us
+    %ul.nav.navbar-nav.pull-right
+      - if @current_user
+        %li
+          %a{:href => '#' }= @current_user.email
+        %li
+          %a{:href => logout_session_index_path } LogOut
+      -else
+        %li
+          %a{:href => new_session_path } LogIn
+        %li
+          %a{:href => new_registration_path } Sign up
